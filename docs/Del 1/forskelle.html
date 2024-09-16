@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>R intro til VIVE - 4&nbsp; 10 Forskelle mellem R og Stata</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<link href="../Del 1/oversaet.html" rel="next">
+<link href="../Del 1/firstdata.html" rel="prev">
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Del 1/hvorforR.html"><strong>I Hvorfor R</strong></a></li><li class="breadcrumb-item"><a href="../Del 1/forskelle.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">10 Forskelle mellem R og Stata</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">R intro til VIVE</a> 
+    </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Velkommen</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text"><strong>I Hvorfor R</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Del 1/hvorforR.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Hvorfor R!</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Del 1/install.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hvad er R og hvad er RStudio?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Del 1/firstdata.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">De første data i R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Del 1/forskelle.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">10 Forskelle mellem R og Stata</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Del 1/oversaet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Stata til R oversættelser</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">II Grundlæggende Dataarbejde</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">III Regressioner og Tabeller</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">IV Figurer</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">V Machine Learning</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">VI Data Viz</span></span>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">10 Forskelle mellem R og Stata</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>Ah, jeg forstår, du ønsker mere specifikke forskelle i syntaks og brugeroplevelse mellem <strong>R</strong> og <strong>Stata</strong>. Her er en udbygget liste i samme stil som dine eksempler:</p>
+<section id="r-venter-på-at-du-færdiggør-en-kommando-stata-giver-fejl" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="r-venter-på-at-du-færdiggør-en-kommando-stata-giver-fejl">1. <strong>R venter på at du færdiggør en kommando, Stata giver fejl</strong></h3>
+<ul>
+<li><strong>R</strong>: Hvis du ikke afslutter en kommando korrekt (fx mangler en parentes), vil R vente på, at du færdiggør den. Konsollen viser en “+” i stedet for en prompt, hvilket betyder, at R stadig venter på input.</li>
+<li><strong>Stata</strong>: Hvis en kommando ikke er afsluttet korrekt, vil Stata med det samme returnere en fejlmeddelelse.</li>
+</ul>
+</section>
+<section id="stata-kører-altid-hele-linjen-r-kører-kun-det-du-har-markeret" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="stata-kører-altid-hele-linjen-r-kører-kun-det-du-har-markeret">2. <strong>Stata kører altid hele linjen, R kører kun det du har markeret</strong></h3>
+<ul>
+<li><strong>R</strong>: Du kan markere specifikke dele af din kode og kun køre det markerede. Hvis du ikke markerer noget, vil hele linjen blive kørt.</li>
+<li><strong>Stata</strong>: Kører hele linjen uanset hvad, selvom du kun vil udføre en del af koden. Markerede dele bliver ikke ignoreret.</li>
+</ul>
+</section>
+<section id="har-en-speciel-betydning-i-r-men-ikke-i-stata" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="har-en-speciel-betydning-i-r-men-ikke-i-stata">3. <strong>“\” har en speciel betydning i R, men ikke i Stata</strong></h3>
+<ul>
+<li><strong>R</strong>: Bruger “\” som en escape-sekvens, fx <code>\n</code> for linjeskift. Det betyder, at “\” har en funktionel betydning og vi skal bruge “\\” i stier</li>
+<li><strong>Stata</strong>: “” har (næsten) ingen speciel funktionel betydning i kommandoer eller strenge.</li>
+</ul>
+</section>
+<section id="i-r-har-linjeskift-ikke-en-speciel-betydning" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="i-r-har-linjeskift-ikke-en-speciel-betydning">4. <strong>I R har linjeskift ikke en speciel betydning</strong></h3>
+<ul>
+<li><strong>R</strong>: Linjeskift har ingen indbygget betydning. Du kan sprede din kode over flere linjer, og den vil stadig blive fortolket korrekt, så længe syntaksen er komplet.</li>
+<li><strong>Stata</strong>: Default er, at et linjeskift (<code>#delimit cr</code>) afslutter kommandoen. Hvis du ønsker at afslutte kommandoer med fx “;” i stedet for linjeskift, kan du bruge <code>#delimit ;</code>.</li>
+</ul>
+</section>
+<section id="i-r-er-eksisterende-objekter-variable-og-datasæt-ikke-beskyttet" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="i-r-er-eksisterende-objekter-variable-og-datasæt-ikke-beskyttet">5. <strong>I R er eksisterende objekter (variable og datasæt) ikke beskyttet</strong></h3>
+<ul>
+<li><strong>R</strong>: Hvis du tildeler en værdi til et eksisterende objekt (data, variable, funktioner), vil den gamle værdi blive overskrevet uden advarsel. Der findes ikke et “replace”-koncept.</li>
+<li><strong>Stata</strong>: Stata beskytter eksisterende variable ved at kræve, at du eksplicit angiver <code>replace</code> i mange kommandoer for at overskrive eksisterende data.</li>
+</ul>
+</section>
+<section id="r-henter-kun-de-pakker-du-eksplicit-angiver" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="r-henter-kun-de-pakker-du-eksplicit-angiver">6. <strong>R henter kun de pakker du eksplicit angiver</strong></h3>
+<ul>
+<li><strong>R</strong>: Du skal aktivt loade hver enkelt pakke, du vil bruge, med <code>library(pakkenavn)</code>. Selv hvis du har installeret pakker, skal de stadig importeres i hvert script.</li>
+<li><strong>Stata</strong>: Alle installerede kommandoer og pakker er som standard altid tilgængelige uden yderligere handling.</li>
+</ul>
+</section>
+<section id="kommentarer-i-r-er-angivet-med" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="kommentarer-i-r-er-angivet-med">7. <strong>Kommentarer i R er angivet med #</strong></h3>
+<ul>
+<li><strong>R</strong>: Kommentarer angives med <code>#</code>, som ignorerer alt, der følger efter på samme linje.</li>
+<li><strong>Stata</strong>: Kommentarer kan laves med både <code>*</code> eller <code>//</code> for enkeltlinjekommentarer, eller <code>/* */</code> for flersidet kommentarblokke.</li>
+</ul>
+</section>
+<section id="rød-tekst-i-r-betyder-ikke-nødvendigvis-fejl" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="rød-tekst-i-r-betyder-ikke-nødvendigvis-fejl">8. <strong>Rød tekst i R betyder ikke nødvendigvis fejl!</strong></h3>
+<ul>
+<li><strong>R</strong>: R vil nogle gange vise advarsler i rød tekst, men det betyder ikke altid, at noget er gået galt. Det kan være en advarsel om potentielt problematisk kode, men scriptet kan stadig køre.</li>
+<li><strong>Stata</strong>: Røde fejlmeddelelser betyder, at noget er gået galt, og kommandoen blev ikke udført.</li>
+</ul>
+</section>
+<section id="stata-har-point-and-click-r-er-kodebaseret" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="stata-har-point-and-click-r-er-kodebaseret">9. <strong>Stata har “point-and-click”, R er kodebaseret</strong></h3>
+<ul>
+<li><strong>Stata</strong>: Tilbyder en point-and-click-brugergrænseflade, hvor du kan udføre mange kommandoer uden at skrive kode, hvilket er nyttigt for begyndere.</li>
+<li><strong>R</strong>: Er primært kodebaseret, og selvom RStudio har visse funktioner, som point-and-click (fx for import af data), er mulighederne meget mere begrænsede.</li>
+</ul>
+</section>
+<section id="r-håndterer-miljøer-mens-stata-kun-har-én-aktiv-datafil" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="r-håndterer-miljøer-mens-stata-kun-har-én-aktiv-datafil">10. <strong>R håndterer miljøer, mens Stata kun har én aktiv datafil</strong></h3>
+<ul>
+<li><strong>R</strong>: Arbejder med flere datasæt på én gang, hvor du kan oprette og bruge mange forskellige objekter i hukommelsen på én gang.</li>
+<li><strong>Stata</strong>: Har kun ét aktivt datasæt ad gangen i hukommelsen, så hvis du vil arbejde med flere datasæt, skal du loade dem en ad gangen eller bruge merge/join operationer.</li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../Del 1/firstdata.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">De første data i R</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../Del 1/oversaet.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Stata til R oversættelser</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
