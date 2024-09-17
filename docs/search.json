@@ -96,5 +96,19 @@
     "title": "5  Stata til R oversættelser",
     "section": "5.2 Kodestumper",
     "text": "5.2 Kodestumper\n\nLoad dta data: [Stata-eksempel] [R-eksempel]\nLoad csv data: [Stata-eksempel] [R-eksempel]\nLoad xlsx data: [Stata-eksempel] [R-eksempel]\nUdregn gennemsnit indenfor hver gruppe: [Stata-eksempel] [R-eksempel]\n“Collapse” data på gruppe: [Stata-eksempel] [R-eksempel]\nEstimer en lineær model: [Stata-eksempel] [R-eksempel]\n\nListen udvides på efterspørgsel."
+  },
+  {
+    "objectID": "brugere/brugere.html",
+    "href": "brugere/brugere.html",
+    "title": "R brugere på VIVE",
+    "section": "",
+    "text": "skriv til mig (hhs@vive.dk) hvis du er R bruger og gerne vil tilføjes listen (eller hvis du vil fjernes)\n\nStefan Bastholm Andrade (sba@vive.dk)\nJakob Kaarup Jensen (jaje@vive.dk)\nSerkan Korkmaz (seko@vive.dk)\nLau Utoft Madsen (lama@vive.dk)\nHans Henrik Sievertsen (hhs@vive.dk)"
+  },
+  {
+    "objectID": "brugere/optagelse.html",
+    "href": "brugere/optagelse.html",
+    "title": "Optagelser",
+    "section": "",
+    "text": "I Hvorfor R?\nJakob Kaarup Jensen (jaje@vive.dk)\nSerkan Korkmaz (seko@vive.dk)\nLau Utoft Madsen (lama@vive.dk)\nHans Henrik Sievertsen (hhs@vive.dk)"
   }
 ]
